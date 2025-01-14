@@ -1,7 +1,15 @@
 package com.tpe.domain;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
+import javax.persistence.*;
+import javax.validation.constraints.*;
+
+//import jakarta.persistence.*;
+//import jakarta.validation.constraints.Email;
+//import jakarta.validation.constraints.NotBlank;
+//import jakarta.validation.constraints.NotNull;
+//import jakarta.validation.constraints.Size;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -10,13 +18,6 @@ import java.time.LocalDateTime;
 @Setter//tüm fieldlar için setter methodunun tanımlanmasını sağlar
 @AllArgsConstructor//tüm fieldlarin icerisinde tanımlı oldugu bir cons. olusturmayi saglar
 @NoArgsConstructor//defualt cons. olusmasını sağlar
-
-//@RequiredArgsConstructor//sadece final değerleri atamayı sağlayan cons.
-////objeyi const ederken final olan zorunlu degerleri
-//public Student(String name, String lastname) {
-//        this.name = name;
-//        this.lastname = lastname;
-//        }
 @Entity
 public class Student {
 
@@ -28,13 +29,13 @@ public class Student {
     @NotBlank(message = "Name can not be blank!")//null, "","    ", kabul etmez
     //@NotEmpty//null,"" kabul etmez "        " kabul eder
     //@NotNull//null kabul etmez "" ,"       " kabul eder.
-    @Size(min = 2 , max = 50 , message = "name must be between 2 and 50")
+    @Size(min = 2,max = 50,message = "name must be between 2 and 50")
     @Column(nullable = false)
     /*final*/ private String name;
 
     @NotBlank(message = "Lastname can not be blank!")
+    @Size(min = 2,max = 50,message = "lastname must be between 2 and 50")
     @Column(nullable = false)
-    @Size(min = 2 , max = 50 , message = "lastname must be between 2 and 50")
     /*final*/private String lastname;
 
     @NotNull(message = "Please provide grade")
@@ -51,5 +52,52 @@ public class Student {
 
     //getter-setter
 
+/*
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public Integer getGrade() {
+        return grade;
+    }
+
+    public void setGrade(Integer grade) {
+        this.grade = grade;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public LocalDateTime getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(LocalDateTime createDate) {
+        this.createDate = createDate;
+    }*/
 }
