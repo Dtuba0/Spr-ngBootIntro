@@ -92,7 +92,7 @@ public class StudentController {
 
         return new ResponseEntity<>(student,HttpStatus.OK);
 
-    }//şjnlknhlknblkmşilöişç,
+    }
 
     //ÖDEV : (ALTERNATİF)path param ile id'si verilen öğrenciyi getirme
     //request : http://localhost:8080/students/1 + get
