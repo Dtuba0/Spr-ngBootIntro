@@ -94,8 +94,6 @@ public class StudentController {
 
     }
 
-    //ÖDEV : (ALTERNATİF)path param ile id'si verilen öğrenciyi getirme
-    //request : http://localhost:8080/students/1 + get
-    //response student + 200
+
 
 }
